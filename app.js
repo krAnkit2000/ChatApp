@@ -35,7 +35,7 @@ function generateRandomRoomId(length = 6) {
 generateIdBtn.addEventListener('click', () => {
     const newId = generateRandomRoomId();
     chatIdInput.value = newId;
-    alert(`Chat Id Generated: ${newId}.`);
+    // alert(`Chat Id Generated: ${newId}.`);
 });
 
 // STEP 1 & 2: JOIN CHAT BUTTON CLICK (Slightly updated flow)
@@ -68,7 +68,7 @@ document.getElementById('send-btn').addEventListener('click', async () => {
     const text = messageInput.value.trim();
     if (!text) return;
     
-    messageInput.value = ''; // Input box khali karein
+    messageInput.value = ''; 
     
     try {
         const messagesRef = ref(db, 'messages/' + currentChatId);
@@ -80,7 +80,7 @@ document.getElementById('send-btn').addEventListener('click', async () => {
         });
     } catch (error) {
         console.error("Message send fail: ", error);
-        alert("Firebase se connect nahi ho raha.");
+        alert("It didn`t Connect to Firebase .");
     }
 });
 

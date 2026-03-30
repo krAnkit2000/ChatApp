@@ -58,7 +58,7 @@ input {
     background: rgba(255, 255, 255, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 10px;
-    color: #fff;
+    color: #0d0c0c;
     font-size: 14px;
     outline: none;
     transition: 0.3s;
@@ -67,7 +67,10 @@ input {
 input::placeholder {
     color: rgba(255, 255, 255, 0.7);
 }
-
+#chat-id-input{
+  font-weight: bolder;
+  font-family: monospace;
+}
 input:focus {
     background: rgba(255, 255, 255, 0.25);
     border-color: rgba(255, 255, 255, 0.6);
@@ -87,8 +90,11 @@ button {
     color: #fff;
 }
 
+/* #send-btn{
+    width: 12rem;
+} */
 .btn-primary {
-    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    background: linear-gradient(135deg, #4295ed, #0072ff);
     box-shadow: 0 4px 15px rgba(0, 114, 255, 0.4);
 }
 
@@ -157,45 +163,15 @@ button {
 #messages-container::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); border-radius: 10px; }
 #messages-container::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.3); border-radius: 10px; }
 
-/* Messages Bubbles */
-/* .message {
-    padding: 10px 15px;
-    border-radius: 15px;
-    max-width: 80%;
-    word-wrap: break-word;
-    font-size: 14px;
-    position: relative;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
 
-.message.mine {
-    background: linear-gradient(135deg, #00c6ff, #0072ff);
-    align-self: flex-end;
-    border-bottom-right-radius: 2px;
-}
-
-.message.other {
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    align-self: flex-start;
-    border-bottom-left-radius: 2px;
-}
-
-.message strong {
-    display: block;
-    font-size: 11px;
-    margin-bottom: 4px;
-    opacity: 0.9;
-    text-transform: uppercase;
-} */
  /* Messages Bubbles */
 .message {
     padding: 10px 15px;
     border-radius: 15px;
-    max-width: 75%; /* Message screen ke 75% hisse se zyada bada nahi hoga */
-    width: fit-content; /* Jitna text hoga, box utna hi bada hoga */
+    max-width: 75%; 
+    width: fit-content; 
     
-    /* 🌟 Ye 2 lines lambe words ko break karke neeche lane ke liye hain 🌟 */
+  
     word-break: break-word; 
     overflow-wrap: break-word; 
     
@@ -203,22 +179,24 @@ button {
     position: relative;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     display: flex;
-    flex-direction: column; /* Text aur timer ko theek se align karne ke liye */
+    flex-direction: column; 
 }
 
 .message.mine {
-    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    min-width: 12rem;
+    background: linear-gradient(135deg, #b35f82, #88558e);
     align-self: flex-end; /* Right side bhejne ke liye */
     border-bottom-right-radius: 2px;
     color: #ffffff; /* Text color white taaki padhne mein aasan ho */
 }
 
 .message.other {
+  min-width: 12rem;
     background: rgba(255, 255, 255, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.1);
     align-self: flex-start; /* Left side dikhane ke liye */
     border-bottom-left-radius: 2px;
-    color: #ffffff; 
+    color: #070505; 
 }
 
 .message strong {
@@ -242,7 +220,7 @@ button {
     opacity: 0.7;
     margin-top: 5px;
     text-align: right;
-    display: block;
+    display: none;
 }
 
 .input-area {
