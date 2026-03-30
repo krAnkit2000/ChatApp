@@ -100,7 +100,7 @@ function loadMessages() {
                     
                     setTimeout(() => {
                         remove(ref(db, `messages/${currentChatId}/${msgKey}`));
-                    }, 30000);
+                    }, 60000);
                 }
             });
         }
