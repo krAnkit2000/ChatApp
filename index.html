@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30-Sec Auto Delete Chat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="setup-screen" class="container">
+        <h2>Join or Create Chat</h2>
+        <input type="text" id="username" placeholder="Enter your Name (e.g., Rahul)" required>
+        
+        <input type="text" id="chat-id-input" placeholder="Enter Secret Chat ID (e.g., ROOM123)" required>
+        <button id="generate-id-btn" class="btn-secondary">Generate Secret ID</button>
+        
+        <button id="join-btn" class="btn-primary">Join Chat</button>
+    </div>
+
+    <div id="chat-screen" class="container hidden">
+        <div class="chat-header">
+            <div>Chat ID: <span id="display-chat-id"></span></div>
+            <button id="leave-btn" class="leave-btn">Leave</button>
+        </div>
+        
+        <div id="messages-container">
+            </div>
+        
+        <div class="input-area">
+            <input type="text" id="message-input" placeholder="Type a message..." autocomplete="off">
+            <button id="send-btn" class="btn-primary">Send</button>
+        </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>

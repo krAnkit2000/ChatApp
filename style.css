@@ -1,0 +1,262 @@
+/* Reset & Typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    /* Cool Animated Gradient Background */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-size: 200% 200%;
+    animation: gradientBG 10s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 🌟 GLASSMORPHISM CONTAINER 🌟 */
+.container {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    backdrop-filter: blur(15px); /* Background blur effect */
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Glass edges */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); /* Soft shadow */
+    border-radius: 20px;
+    padding: 30px;
+    width: 450px;
+    max-width: 90%;
+    transition: all 0.3s ease;
+}
+
+.hidden {
+    display: none !important;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Inputs styling for Glass effect */
+input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+input:focus {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #fff;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    box-shadow: 0 4px 15px rgba(0, 114, 255, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 114, 255, 0.6);
+}
+
+.btn-secondary {
+    background: rgba(239, 78, 78, 0.605);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    margin-block-end: 9px;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.or-divider {
+    text-align: center;
+    margin: 15px 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+}
+
+/* Chat Screen Specifics */
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+#display-chat-id {
+    font-weight: bold;
+    color: #00e5ff;
+    letter-spacing: 1px;
+}
+
+.leave-btn {
+    width: auto;
+    padding: 6px 15px;
+    background: #ff4b2b;
+    box-shadow: 0 4px 15px rgba(255, 75, 43, 0.4);
+    font-size: 13px;
+}
+
+.leave-btn:hover {
+    background: #ff416c;
+}
+
+/* Custom Scrollbar */
+#messages-container {
+    height: 350px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-right: 5px;
+    margin-bottom: 15px;
+}
+
+#messages-container::-webkit-scrollbar { width: 6px; }
+#messages-container::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); border-radius: 10px; }
+#messages-container::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.3); border-radius: 10px; }
+
+/* Messages Bubbles */
+/* .message {
+    padding: 10px 15px;
+    border-radius: 15px;
+    max-width: 80%;
+    word-wrap: break-word;
+    font-size: 14px;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.message.mine {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    align-self: flex-end;
+    border-bottom-right-radius: 2px;
+}
+
+.message.other {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    align-self: flex-start;
+    border-bottom-left-radius: 2px;
+}
+
+.message strong {
+    display: block;
+    font-size: 11px;
+    margin-bottom: 4px;
+    opacity: 0.9;
+    text-transform: uppercase;
+} */
+ /* Messages Bubbles */
+.message {
+    padding: 10px 15px;
+    border-radius: 15px;
+    max-width: 75%; /* Message screen ke 75% hisse se zyada bada nahi hoga */
+    width: fit-content; /* Jitna text hoga, box utna hi bada hoga */
+    
+    /* 🌟 Ye 2 lines lambe words ko break karke neeche lane ke liye hain 🌟 */
+    word-break: break-word; 
+    overflow-wrap: break-word; 
+    
+    font-size: 14px;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column; /* Text aur timer ko theek se align karne ke liye */
+}
+
+.message.mine {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    align-self: flex-end; /* Right side bhejne ke liye */
+    border-bottom-right-radius: 2px;
+    color: #ffffff; /* Text color white taaki padhne mein aasan ho */
+}
+
+.message.other {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    align-self: flex-start; /* Left side dikhane ke liye */
+    border-bottom-left-radius: 2px;
+    color: #ffffff; 
+}
+
+.message strong {
+    display: block;
+    font-size: 11px;
+    margin-bottom: 4px;
+    opacity: 0.9;
+    text-transform: uppercase;
+}
+
+.delete-timer {
+    font-size: 10px;
+    opacity: 0.7;
+    margin-top: 5px;
+    text-align: right;
+    display: block;
+}
+
+.delete-timer {
+    font-size: 10px;
+    opacity: 0.7;
+    margin-top: 5px;
+    text-align: right;
+    display: block;
+}
+
+.input-area {
+    display: flex;
+    gap: 10px;
+}
+
+.input-area input {
+    margin: 0;
+    flex: 1;
+}
+
+.input-area button {
+    width: auto;
+    padding: 0 20px;
+    margin: 0;
+}
